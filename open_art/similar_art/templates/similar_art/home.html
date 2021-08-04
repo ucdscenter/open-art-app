@@ -1,1 +1,16 @@
-<a href='/similar_art/prototype'>prototype page</a>
+{% extends 'similar_art/base.html' %}
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+
+<div class="col-12 screen-col align-middle pt-5" align="center">
+  
+   <embed src="/similar_art/viewpdf?fname=ConceptPaper.pdf" width="80%" height="100%" />
+</div>
+
+{% endblock content %}
+{% block footer_javascript_page %}
+	<script>
+	    $('#site-wrapper').addClass('home-bg')
+	</script>
+{% endblock footer_javascript_page %}

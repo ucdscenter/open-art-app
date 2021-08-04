@@ -1,0 +1,145 @@
+{# HTML5 declaration #}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" xml:lang="en" xmlns= "http://www.w3.org/1999/xhtml">
+{# Make modifiable head elements #}
+<head>
+
+  <title>{% block title %} Art Connection {% endblock title %}</title>
+  <meta http-equiv="Content-Language" content="en">
+  <link rel="icon" type="image/x-icon" href="{% static 'similar_art/images/favicon.ico' %}" />
+
+  <!-- For iPhone 4 Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'similar_art/images/favicon.ico' %}" />
+  <!-- For iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'similar_art/images/favicon.ico' %}" />
+  <!-- For iPhone:-->
+  <link rel="apple-touch-icon-precomposed" href="{% static 'similar_art/images/favicon.ico' %}" /> 
+  <meta http-equiv="Content-Language" value="en-US"/>
+  {% block head_favicon %}
+  {% endblock head_favicon %}
+  {% block head_meta %}
+  {% block head_meta_charset %}
+  
+  {% endblock head_meta_charset %}
+  {% block head_meta_contentlanguage %}
+  
+  {% endblock head_meta_contentlanguage %}
+  {% block head_meta_viewport %}
+  <!--<meta name="viewport"
+        content="width=device-width, initial-scale=1.0">-->
+  {% endblock head_meta_viewport %}
+  {% endblock head_meta %}
+  {% block head_css %}
+  {% block head_css_site %}
+
+    <!--<link rel="stylesheet" href="/static/similar_art/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="{% static 'similar_art/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'similar_art/style.css' %}" type="text/css">
+  {% endblock head_css_site %}
+  {% block head_css_section %}
+   
+  {% endblock head_css_section %}
+  {% block head_css_page %}
+  {% endblock head_css_page %}
+  {% endblock head_css %}
+</head>
+
+<body>
+  <div class="hidden">
+    <p>The English language is an amazing script, capable of both being read and written. However, the Texan variation of the language, is particularly interesting. An example of this is the word y’all. Y’all is the combination of the regular English words You and All, however this can be taken further to make Y’all’ve, Y’all all or Y’alall and many other variations. The Texan language is truly fascinating, and resimilar_arts are attempting to decode it, as it is very complex.</p>
+  </div>
+{# Navigation Menu #}
+{% csrf_token %}
+<nav class="navbar navbar-expand-lg bg-light" id="main-nav">
+
+  <div class="navbar-header">
+     <!--<a class="navbar-brand" href="/"><img src="//lcdn.uc.edu/uc-assets/images/logos/uclogo.png" width="75" height="30" alt="mobile logo" class="img-fluid" /><span class="sr-only">University of Cincinnati</span></a>-->
+   <a class="navbar-brand" href="/" style="color: #002a31;">
+      OSD
+      </a>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span ><i class="material-icons center_icon">list</i></span>
+  </button>
+  <div class="navbar-collapse collapse" id="navbarSupportedContent">
+
+    <ul class="nav navbar-nav mr-auto">
+      <li class="nav-item" id="search-btn"><a class="nav-link" href="/similar_art/initial_results" id="search-nav">Initial Results</a></li>
+      <li class="nav-item" id="search-btn"><a class="nav-link" href="/similar_art/prototype" id="search-nav">Prototype</a></li>
+    </ul>
+  </div>
+
+</nav>
+
+
+{# Document Body #}
+<div id="site-wrapper" class="mt-0 pt-0">
+  <p class="hidden third-color" id="third-color"></p>
+  <div class="container-fluid">
+    <div id="base-row" class="row justify-content-center">
+      {% block content %}
+
+      if you see this, something is wrong!
+      {% endblock content %}
+    </div>
+  </div>
+
+
+  <div class="row footer align-items-center justify-content-center">
+    <div class="col-10">
+      <div class="row">
+        <div class="col-3">
+          <h6>UC DIGITAL SCHOLARSHIP CENTER</h6>
+          <h6>LANGSAM LIBRARY2911 WOODSIDE DRIVE, CINCINNATI, OH</h6>
+          <h6>PHONE513.556.8794</h6>
+        </div>
+        <div class="col-3">
+          <img alt="uc footer logo" src="//lcdn.uc.edu/ucdhs/images/uc-logo@2x.png" style="max-width: 150px; margin-bottom: 1.5rem">
+          <img alt="mellon footer logo" src="{% static 'similar_art/images/mellon-foundation-logo.png' %}" style="max-width: 150px; margin-bottom: 1.5rem">
+          
+        </div>
+        <div class="col-3">
+          <h6>The guides and leaders of this project are Jordan Tate and Vittoria Diaello at UC DAAP, and James Lee at the DSC.</h6>
+        </div>
+        <div class="col-3">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+{# The Footer #}
+
+
+</body>
+{# Set of blocks that can be used to display JavaScript files #}
+{% block footer_javascript %}
+{% block footer_javascript_site %}
+<script src="{% static 'similar_art/js/jquery.min.js' %}"></script>
+<script src="{% static 'similar_art/js/popper.min.js' %}" type="module"></script>
+<script src="{% static 'similar_art/js/bootstrap.min.js' %}"></script>
+
+
+{% endblock footer_javascript_site %}
+{% block footer_javascript_section %}
+ {% endblock footer_javascript_section %}
+{% block footer_javascript_page %}
+{% endblock footer_javascript_page %}
+<script type="text/javascript">
+  if(window.innerHeight < 700){
+    $('.screen-col').height(700)
+  }
+  else{
+    $('.screen-col').height(window.innerHeight)
+  }
+</script>
+{% endblock footer_javascript %}
+</html>

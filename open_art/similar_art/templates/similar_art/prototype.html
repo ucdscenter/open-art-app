@@ -1,1 +1,18 @@
-<p>Hi there!</p>
+{% extends 'similar_art/base.html' %}
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+
+<div class="col-12 screen-col align-middle pt-5" align="center">
+    <div class="col-8">
+      PROTOTYPE IN DEVELOPMENT
+    </div>
+</div>
+
+
+{% endblock content %}
+{% block footer_javascript_page %}
+	<script>
+	    $('#site-wrapper').addClass('home-bg')
+	</script>
+{% endblock footer_javascript_page %}

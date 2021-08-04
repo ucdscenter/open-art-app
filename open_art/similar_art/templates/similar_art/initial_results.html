@@ -1,0 +1,23 @@
+{% extends 'similar_art/base.html' %}
+{% block title %}Home{% endblock title %}
+{% load static %}
+{% block content %}
+
+<div class="col-12 screen-col align-middle pt-5" align="center">
+    <div class="col-8">
+      <h2>Initial Results</h2>
+
+
+      <img src="{% static 'similar_art/images/Confusion_matrix.png' %}" class="img-fluid" alt="Confusion matrix showing classification results on wikiarts eras" >
+
+       <img src="{% static 'similar_art/images/wikiarts_results_survey_image_1.png' %}" class="img-fluid" alt="Confusion matrix showing classification results on wikiarts eras" >
+
+        <img src="{% static 'similar_art/images/wikiarts_results_survey_image_2.png' %}" class="img-fluid" alt="Confusion matrix showing classification results on wikiarts eras" >
+    </div>
+</div>
+
+
+{% endblock content %}
+{% block footer_javascript_page %}
+
+{% endblock footer_javascript_page %}
