@@ -7,9 +7,9 @@
     <div class="col-8">
       <h2>Initial Results</h2>
 
-
+      <p>Confusion matrix showing the results of a classification model trained on the wikiarts dataset, using the era folders as labels.</p>
       <img src="{% static 'similar_art/images/Confusion_matrix.png' %}" class="img-fluid" alt="Confusion matrix showing classification results on wikiarts eras" >
-
+      <p>A sampling of results showing image similarity results from a sample of the wikiarts dataset. Image 0 is the input image.</p>
        <img src="{% static 'similar_art/images/wikiarts_results_survey_image_1.png' %}" class="img-fluid" alt="Confusion matrix showing classification results on wikiarts eras" >
 
         <img src="{% static 'similar_art/images/wikiarts_results_survey_image_2.png' %}" class="img-fluid" alt="Confusion matrix showing classification results on wikiarts eras" >
@@ -19,5 +19,7 @@
 
 {% endblock content %}
 {% block footer_javascript_page %}
-
+<script type="text/javascript">
+	
+</script>
 {% endblock footer_javascript_page %}

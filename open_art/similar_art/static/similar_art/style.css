@@ -1,3 +1,7 @@
 .hidden {
 	display: none;
 }
+
+.screen-col {
+	min-height: 700px;
+}
