@@ -6,7 +6,7 @@ Application for the Open Source Discourse project
 
 ```
 cd open-art-app/open_art
-pip install --upgrade pip
+pip install --upgrade pip --user
 pip install -r requirements.txt
 ```
 
