@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.http import FileResponse, Http404
+from .forms import *
 # Create your views here.
 
 def index(request):
@@ -10,8 +11,19 @@ def index(request):
 
 def prototype(request):
 	html = 'similar_art/prototype.html'
-	ctxt = {}
-	return render(request, html, ctxt)
+	if request.method == 'GET':
+		form = ArtForm()
+		ctxt = {'form' : form}
+		return render(request, html, ctxt)
+	else:
+		form = ArtForm(request.POST, request.FILES)
+
+		if form.is_valid():
+			form.save()
+			newForm = ArtForm()
+			ctxt = {'form' : newForm, 'message': 'Your image was uploaded successfully'}
+			return render(request, html, ctxt)
+	
 
 def initial_results(request):
 	html = 'similar_art/initial_results.html'
