@@ -5,7 +5,12 @@
 
 <div class="col-12 screen-col align-middle pt-5" align="center">
     <div class="col-8">
-      PROTOTYPE IN DEVELOPMENT
+      <form method = "post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button> <br>
+        {{ message }}
+      </form>
     </div>
 </div>
 
