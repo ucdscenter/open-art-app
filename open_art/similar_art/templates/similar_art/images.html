@@ -1,0 +1,22 @@
+{% extends 'similar_art/base.html' %}
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+
+<div class="col-12 screen-col align-middle pt-5 pb-5" align="center">
+    <div class="row">
+        {% for Art in art_images %}
+            <div class="col-2">
+                <img src="/similar_art{{ Art.art_main_Img.url }}" class="img-responsive" style="width: 100%; margin-right: 10px;" />
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock content %}
+{% block footer_javascript_page %}
+	<script>
+	    $('#site-wrapper').addClass('home-bg')
+	</script>
+{% endblock footer_javascript_page %}
