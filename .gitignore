@@ -4,3 +4,4 @@ __pycache__/
 /venv/
 /.idea/*
 open_art/media
+open_art/db.sqlite3
