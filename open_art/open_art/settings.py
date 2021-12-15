@@ -23,9 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-8144i(qrq6+03=z1o02jxw$eu=n24r=a3vvn@h9&*&947nzxz7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['13.58.213.241', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['13.58.213.241', 'localhost', 'osd.modelofmodels.io','127.0.0.1']
+
 
 
 # Application definition
