@@ -70,11 +70,12 @@
       <li class="nav-item" id="search-btn"><a class="nav-link" href="/similar_art/art_images" id="search-nav">art_images</a></li>
       
       {% if user.is_authenticated %}
+        <li class="nav-item" id="search-btn"><a class="nav-link" href="{% url 'change-password' %}" id="search-nav">Change Password</a></li>
         <li class="nav-item" id="search-btn"><a class="nav-link" href="{% url 'logout' %}" id="search-nav">Logout</a></li>
       {% else %}
         <li class="nav-item" id="search-btn"><a class="nav-link" href="{% url 'login' %}" id="search-nav">Login</a></li>
       {% endif %}
-      
+
     </ul>
   </div>
 
