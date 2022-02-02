@@ -7,3 +7,4 @@ open_art/media
 open_art/db.sqlite3
 open_art/open_art/__pycache__/
 open_art/similar_art/__pycache__/
+open_art/open_art/credentials.py

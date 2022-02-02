@@ -27,12 +27,12 @@ urlpatterns = [
     path('reset-done', auth_views.PasswordResetDoneView.as_view(
         template_name='registration/reset-done.html'
     ), name='password_reset_done'),
-    path('reset-confirm', auth_views.PasswordResetConfirmView.as_view(
+    path('reset-confirm/<uidb64>/<token>', auth_views.PasswordResetConfirmView.as_view(
         template_name='registration/reset-confirm.html'
     ), name='password_reset_confirm'),
     path('reset-complete', auth_views.PasswordResetCompleteView.as_view(
         template_name='registration/reset-complete.html'
-    ), name='reset-password_reset_complete'),
+    ), name='password_reset_complete'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
