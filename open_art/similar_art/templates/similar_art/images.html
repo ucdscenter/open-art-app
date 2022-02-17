@@ -7,7 +7,7 @@
     <div class="row">
         {% for Art in art_images %}
             <div class="col-2">
-                <img src="/similar_art{{ Art.art_main_Img.url }}" class="img-responsive" style="width: 100%; margin-right: 10px;" />
+                <img src="{{ Art.art_main_Img.url }}" class="img-responsive" style="width: 100%; margin-right: 10px;" />
             </div>
         {% endfor %}
     </div>

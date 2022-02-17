@@ -33,7 +33,7 @@
   {% block head_css %}
   {% block head_css_site %}
 
-    <!--<link rel="stylesheet" href="/static/similar_art/css/bootstrap.min.css">-->
+    <!--<link rel="stylesheet" href="/static/similar_art/css/bootstrap.min.css" type="text/css">-->
     <link rel="stylesheet" href="{% static 'similar_art/css/bootstrap.min.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'similar_art/style.css' %}" type="text/css">
   {% endblock head_css_site %}
@@ -124,7 +124,7 @@
 {# Set of blocks that can be used to display JavaScript files #}
 {% block footer_javascript %}
 {% block footer_javascript_site %}
-<script src="{% static 'similar_art/js/jquery.min.js' %}"></script>
+<script src="{% static 'similar_art/js/jquery.min.js' %}" type="text/javascript"></script>
 <script src="{% static 'similar_art/js/popper.min.js' %}" type="module"></script>
 <script src="{% static 'similar_art/js/bootstrap.min.js' %}"></script>
 
