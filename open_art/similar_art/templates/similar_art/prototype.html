@@ -12,7 +12,10 @@
         <button type="submit">Upload</button> <br>
         {{ message }}
         {{ results }}
-      </form>
+        {% for result in results %}
+        <img src="{{ result }}">
+        {% endfor %}
+              </form>
     </div>
 </div>
 {% else %}
