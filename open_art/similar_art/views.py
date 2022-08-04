@@ -6,6 +6,15 @@ from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from .forms import *
 from .models import Art
+from PIL import Image
+
+
+from similar_art.similar_tree import *
+import pickle
+import vptree
+from scipy import spatial
+
+#tree = pickle.load(open('similar_art/data/wikiarts_tree.txt', 'rb'))
 # Create your views here.
 
 def index(request):
@@ -14,6 +23,15 @@ def index(request):
 	return render(request, html, ctxt)
 
 def prototype(request):
+	def cosine_similarity(vec1, vec2):
+		return spatial.distance.cosine(vec1, vec2)
+
+	def euclidean(vec1,vec2):
+		return spatial.distance.euclidean(vec1[0],vec2[0])
+
+	tree = pickle.load(open('similar_art/data/wikiarts_tree.txt', 'rb'))
+
+	
 	html = 'similar_art/prototype.html'
 	if request.method == 'GET':
 		form = ArtForm()
@@ -21,11 +39,20 @@ def prototype(request):
 		return render(request, html, ctxt)
 	else:
 		form = ArtForm(request.POST, request.FILES)
-
+		
 		if form.is_valid():
+			im = Image.open(request.FILES['art_main_Img'])
+
+			results = extract_similar_images(im, tree)
+			results = similar_image_paths(results)
 			form.save()
 			newForm = ArtForm()
-			ctxt = {'form' : newForm, 'message': 'Your image was uploaded successfully'}
+			ctxt = {'form' : newForm, 'message': 'Your image was uploaded successfully', 'results' : results}
+			return render(request, html, ctxt)
+		else:
+			im = Image.open(request.FILES['art_main_Img'])
+			newForm = ArtForm()
+			ctxt = {'form' : newForm, 'message': 'Your image failed to upload'}
 			return render(request, html, ctxt)
 	
 def images(request):

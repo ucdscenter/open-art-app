@@ -10,3 +10,5 @@ open_art/similar_art/__pycache__/
 open_art/static/
 open_art/open_art/credentials.py
 
+open_art/similar_art/data/
+
